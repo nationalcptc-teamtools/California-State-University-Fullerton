@@ -1,6 +1,7 @@
 initial nmap scan for a quick scan: nmap -F -iL ip.txt -oX nmap_intial.xml
 - "-F" fast scan 
 - "iL" list of target hosts 
+- make sure to check ports and scan them aggresively 
 
 second indepth nmap scan: nmap -sC -sV -O -Pn -iL ip.txt -oX nmap_full.xml
 
