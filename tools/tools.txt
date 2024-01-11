@@ -1,0 +1,98 @@
+﻿**tools**
+aws-recon 
+**# Install
+gem install aws_recon
+Recon and get json
+AWS_PROFILE=<profile> aws_recon \
+  --services S3,EC2 \
+  --regions global,us-east-1,us-east-2 \
+--verbose**
+
+
+AWS config 
+
+
+$ aws configure
+AWS Access Key ID [None]: YOUR_ACCESS_KEY_ID
+AWS Secret Access Key [None]: YOUR_SECRET_ACCESS_KEY
+Default region name [None]: YOUR_DEFAULT_REGION
+Default output format [None]: json
+
+
+Methodology 
+whoami 
+IAM 
+# This command will give you the ARN & full name of you user.
+aws --profile bilbo --region us-east-1 sts get-caller-identity
+# This command will list the policies attached to your user.
+        aws --profile bilbo --region us-east-1 iam list-user-policies --user-name [your_user_name]
+# This command will list all of your permissions.
+aws --profile bilbo --region us-east-1 iam get-user-policy --user-name [your_user_name] --policy-name [your_policy_name]
+check ec2 aws ec2 describe-instances --regoin us-east-1 --profile name-here
+then check lambda aws lambda list-functions  --profile solus --region us-east-1
+
+
+
+
+IAM privesc
+https://github.com/RhinoSecurityLabs/cloudgoat/blob/master/scenarios/vulnerable_lambda/cheat_sheet.md
+enumate_iam --access_key --secret_key
+cloudsplanning 
+pip3 install --user cloudsplaining
+
+
+ec2 endpoint  exposure 
+curl ip -H 'host:169.254.169.254'    
+Bypass cloudtrail 
+download sneakyendpoint its a  tool created a ec2 instance in a  private network and set up multiple vpc endpoint so it bypass the cloud trial  
+aws ssm start-session --target i-0042b3624be8611b0
+to login if cli doesn't work move to website 
+now we can enum upload  and download 
+Remediation for this, 
+First update metadata to v2.2 ask for http token and disable http-endpoint 
+imds v2 enabled 
+
+
+S3 command 
+aws s3 ls --profile 
+aws s3 ls s3://bucketnaem 
+find file 
+aws s3 cp s3://
+
+
+priv  in lambda use invoke find the function and 
+aws lambda invoke --function-name cg-lambda-<cloudgoat_id> ./out.txt
+# Install
+## Feel free to use venvs
+pip3 install pacu
+
+
+# Use pacu CLI
+pacu
+> import_keys <profile_name> # import 1 profile from .aws/credentials
+> import_keys --all # import all profiles
+> list # list modules
+> exec iam__enum_permissions # Get permissions
+> exec iam__privesc_scan # List privileged permissions
+
+
+# Install
+gem install aws_recon
+
+
+# Recon and get json
+AWS_PROFILE=<profile> aws_recon \
+  --services S3,EC2 \
+  --regions global,us-east-1,us-east-2 \
+  --verbose
+# Install
+pip install cloudsplaining
+
+
+# Download IAM policies to check
+## Only the ones attached with the versions used
+cloudsplaining download --profile dev
+
+
+# Analyze the IAM policies
+cloudsplaining scan --input-file /private/tmp/cloudsplaining/dev.json --output /tmp/files/
