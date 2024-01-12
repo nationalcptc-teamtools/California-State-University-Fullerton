@@ -1,10 +1,11 @@
 initial nmap scan for a quick scan: nmap -F -iL ip.txt -oX nmap_intial.xml
-- "-F" fast scan 
-- "iL" list of target hosts 
-- make sure to check ports and scan them aggresively 
 
 second indepth nmap scan: nmap -sC -sV -O -Pn -iL ip.txt -oX nmap_full.xml
 
 convert XML to HTML: xsltproc nmap_full.xml -o nmap_full.html
 
 create script to pull out each ip address and find what services are running on each ip
+
+1. take all the subnets and find the relevant IP addresses within them 
+2. take each list of IP's then perform a standard scan of ports and services 
+3. 
