@@ -1,0 +1,6 @@
+#no of this works
+sudo fping -q -a -s -g ip/subnet
+nmap -sn <ip/subnet> #no port scan
+nmap -PE -sn <ip/subnet> #icmp scan
+nmap -sC -sV -iL <.txt> -min-rate 2000 (or 1000) -oA firstscan
+xsltproc scan.xml > scan.html
