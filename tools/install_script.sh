@@ -18,7 +18,27 @@ sudo apt install wfuzz
 sudo apt install smbmap
 sudo apt install wget
 sudo apt install gzip
-wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip && unzip SecList.zip && rm -f SecList.zip
-gunzip rockyou.txt.gz #get to directory of file and run this command
 sudo apt install wordlists
 sudo apt install mimikatz
+sudo apt install proxychains4
+sudo apt install enum4linux
+sudo apt install evil-winrm
+sudo apt install nmap
+sudo apt install john
+sudo apt install hashcat
+sudo apt install ffuf
+sudo apt install -y golang
+sudo apt install gobuster
+sudo apt install whatweb
+sudo apt install dirsearch
+sudo apt install cewl
+sudo apt install python3-impacket
+sudo apt install metasploit-framework
+sudo apt install crackmapexec
+sudo apt install exploitdb
+
+wget -c https://github.com/CravateRouge/bloodyAD.git
+wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip && unzip SecList.zip && rm -f SecList.zip
+gunzip rockyou.txt.gz #get to directory of file and run this command
+wget -c https://github.com/BishopFox/sliver/releases/download/v1.5.42/sliver-client_linux #linux
+wget -c https://github.com/BishopFox/sliver/releases/download/v1.5.42/sliver-client_windows.exe #windows
