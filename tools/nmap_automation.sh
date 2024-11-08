@@ -14,5 +14,5 @@ nmap -iL foundIp_filtered.txt -Pn -oN nmap_output -oX xml_ouput
 echo "Nmap complete"
 
 #convert xml into HTML
-xsltproc scan.xml > scan.html
+xsltproc xml_output.xml > html_output.html
 echo "html file created"
