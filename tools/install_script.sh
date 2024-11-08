@@ -42,3 +42,4 @@ wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList
 gunzip rockyou.txt.gz #get to directory of file and run this command
 wget -c https://github.com/BishopFox/sliver/releases/download/v1.5.42/sliver-client_linux #linux
 wget -c https://github.com/BishopFox/sliver/releases/download/v1.5.42/sliver-client_windows.exe #windows
+wget -c https://github.com/r3nt0n/bopscrk.git #wordlist of a certain individual
