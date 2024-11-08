@@ -9,7 +9,8 @@ echo "Ping sweep complete"
 #no threads or min-rate, will be slow but at least we won't crash the network, right?
 #after default ports are scanned come back and do -p-
 #if want to use -p-, must use --min-rate
-nmap -sC -sV -iL foundIp_filtered.txt -Pn -oN nmap_output -oX xml_ouput
+#nmap -sC -sV -iL foundIp_filtered.txt -Pn -oN nmap_output -oX xml_ouput
+nmap -iL foundIp_filtered.txt -Pn -oN nmap_output -oX xml_ouput
 echo "Nmap complete"
 
 #convert xml into HTML
