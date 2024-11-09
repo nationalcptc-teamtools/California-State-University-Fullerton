@@ -87,6 +87,8 @@ wget https://github.com/PowerShellMafia/PowerSploit/raw/master/Recon/PowerView.p
 #plink?
 cd ..
 
+sudo updatedb
+
 echo “nya, happy hacking kitten! :3”
 echo “nya, happy hacking kitten! :3”
 echo “nya, happy hacking kitten! :3”
