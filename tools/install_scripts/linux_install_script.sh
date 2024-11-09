@@ -4,44 +4,44 @@
 username = "$(whoami)"
 
 sudo apt update
-sudo apt install xsltproc
-sudo apt install tmux
-sudo apt install curl
-sudo apt install vim #vim is better not installed
-sudo apt install nano #nano is better so its installed
-sudo apt install python3 python3-pip #both python and pip
-sudo apt install git
-sudo apt install ftp
-sudo apt install smbclient
-sudo apt install chisel
-sudo apt install sublist3r
-sudo apt install wfuzz
-sudo apt install smbmap
-sudo apt install wget
-sudo apt install gzip
-sudo apt install wordlists
-sudo apt install mimikatz
-sudo apt install proxychains4
-sudo apt install enum4linux
-sudo apt install evil-winrm
-sudo apt install nmap
-sudo apt install john
-sudo apt install hashcat
-sudo apt install ffuf
+sudo apt install xsltproc -y
+sudo apt install tmux -y
+sudo apt install curl -y
+sudo apt install vim  -y #vim is better not installed
+sudo apt install nano -y #nano is better so its installed
+sudo apt install python3 python3-pip -y #both python and pip
+sudo apt install git -y
+sudo apt install ftp -y
+sudo apt install smbclient -y
+sudo apt install chisel -y
+sudo apt install sublist3r -y
+sudo apt install wfuzz -y
+sudo apt install smbmap -y
+sudo apt install wget -y
+sudo apt install gzip -y
+sudo apt install wordlists -y
+sudo apt install mimikatz -y
+sudo apt install proxychains4 -y
+sudo apt install enum4linux -y
+sudo apt install evil-winrm -y
+sudo apt install nmap -y
+sudo apt install john -y
+sudo apt install hashcat -y
+sudo apt install ffuf -y
 sudo apt install -y golang
-sudo apt install gobuster
-sudo apt install whatweb
-sudo apt install dirsearch
-sudo apt install cewl
-sudo apt install python3-impacket
-sudo apt install metasploit-framework
-sudo apt install crackmapexec
-sudo apt install exploitdb
-sudo apt install awscli
-sudo apt install kubernetes-helm
-sudo apt install hashid
-sudo apt install hash-identifier
-sudo apt install bloodhound.py
+sudo apt install gobuster -y
+sudo apt install whatweb -y
+sudo apt install dirsearch -y
+sudo apt install cewl -y
+sudo apt install python3-impacket -y
+sudo apt install metasploit-framework -y
+sudo apt install crackmapexec -y
+sudo apt install exploitdb -y
+sudo apt install awscli -y
+sudo apt install kubernetes-helm -y
+sudo apt install hashid -y
+sudo apt install hash-identifier -y
+sudo apt install bloodhound.py -y
 
 
 wget -c https://github.com/sullo/nikto
