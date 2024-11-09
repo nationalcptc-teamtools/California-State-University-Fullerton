@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 #get ip from ping sweep
 nmap -sn -iL iplist.txt -oG foundIp.txt; grep -v Down foundIp.txt; grep -oP '\b(?:\d{1,3}\.){3}\d{1,3}\b' foundIp.txt > foundIp_filtered.txt
 rm iplist.txt
