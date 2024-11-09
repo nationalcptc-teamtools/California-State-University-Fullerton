@@ -37,9 +37,11 @@ sudo apt install python3-impacket
 sudo apt install metasploit-framework
 sudo apt install crackmapexec
 sudo apt install exploitdb
-sudo apt install -y bloodhound neo4j
 sudo apt install awscli
 sudo apt install kubernetes-helm
+sudo apt install hashid
+sudo apt install hash-identifier
+sudo apt install bloodhound.py
 
 
 wget -c https://github.com/sullo/nikto
