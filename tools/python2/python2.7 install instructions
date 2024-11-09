@@ -1,0 +1,15 @@
+Installing Python 2.7.18 in RHEL 9
+tar xzvf Python-2.7.18.tgz
+cd Python-2.7.18
+./configure && make && make altinstall
+cd /usr/local/bin
+ln -s python2.7 python
+
+Installing Python 2.7.18 in SLES 15
+zypper install readline-devel
+zypper install gcc
+tar xzvf Python-2.7.18.tgz
+cd Python-2.7.18
+./configure && make && make altinstall
+cd /usr/local/bin
+ln -s python2.7 python
