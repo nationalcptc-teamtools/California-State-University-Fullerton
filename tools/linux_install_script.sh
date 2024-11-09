@@ -7,7 +7,7 @@ sudo apt update
 sudo apt install xsltproc
 sudo apt install tmux
 sudo apt install curl
-#sudo apt install vim #vim is better not installed
+sudo apt install vim #vim is better not installed
 sudo apt install nano #nano is better so its installed
 sudo apt install python3 python3-pip #both python and pip
 sudo apt install git
