@@ -7,8 +7,8 @@ sudo apt update
 sudo apt install xsltproc
 sudo apt install tmux
 sudo apt install curl
-sudo apt install vim
-sudo apt install nano #better text editor
+sudo apt install vim #better text editor
+sudo apt install nano 
 sudo apt install python3 python3-pip #both python and pip
 sudo apt install git
 sudo apt install ftp
