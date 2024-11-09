@@ -1,0 +1,5 @@
+#bludhound binary
+https://github.com/BloodHoundAD/BloodHound/releases
+
+#burpsuite download
+https://portswigger.net/burp/releases/professional-community-2024-9-5
